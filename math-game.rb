@@ -10,10 +10,8 @@ class Player
   end
 end
 
-# Have 4 question functions
-# Add, subtract, multiply
-# use sample in question to select a random function from questions and pass in
-# the user defined numbers
+# Have 3 question functions: Add, subtract, multiply
+# Returns an array containing a 
 class Questions
   def add(numbers)
     numbers[0] + numbers[1]
@@ -31,11 +29,11 @@ class Questions
     numbers = [rand(1...20), rand(1...20)]
     type = ['add', 'subtract', 'multiply'].sample
     if type == 'add'
-      package = ["What is #{numbers[0]} + #{numbers[1]}?", add(numbers)]
+      package = {:question => "What is #{numbers[0]} + #{numbers[1]}?", :answer => add(numbers)}
     elsif type == 'subtract'
-      package = ["What is #{numbers[0]} - #{numbers[1]}?", subtract(numbers)]
+      package = {:question => "What is #{numbers[0]} - #{numbers[1]}?", :answer => subtract(numbers)}
     elsif type == 'multiply'
-      package = ["What is #{numbers[0]} x #{numbers[1]}?", multiply(numbers)]
+      package = {:question => "What is #{numbers[0]} x #{numbers[1]}?", :answer => multiply(numbers)}
     end
 
     return package
@@ -51,4 +49,5 @@ p p1
 question = Questions.new
 
 test = question.sendBack()
-p test
+p test[:question]
+p test[:answer]
