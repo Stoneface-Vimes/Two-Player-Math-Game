@@ -1,3 +1,5 @@
+# Have 2 question functions: Add, subtract
+# Returns an array containing a
 class Questions
   def add(numbers)
     numbers[0] + numbers[1]

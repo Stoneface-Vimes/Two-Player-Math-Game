@@ -4,11 +4,6 @@ require 'securerandom'
 require './player'
 require './questions'
 require './turns'
-# Have 2 question functions: Add, subtract
-# Returns an array containing a
-
-
-
 
 p1 = Player.new
 p2 = Player.new
